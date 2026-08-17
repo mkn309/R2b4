@@ -12,9 +12,8 @@ android {
         versionName '0.1.0'
     }
 
-    packagingOptions {
-        exclude 'META-INF/versions/9/kotlin-stdlib-jdk7/**'
-        exclude 'META-INF/versions/9/kotlin-stdlib-jdk8/**'
+    lint {
+        checkDependencies false
     }
 }
 
@@ -24,4 +23,9 @@ dependencies {
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
     }
+}
+
+configurations.all {
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
 }
