@@ -1,4 +1,6 @@
-plugins { id 'com.android.application' }
+plugins {
+    id 'com.android.application'
+}
 
 android {
     namespace 'com.gift2bike'
@@ -13,18 +15,23 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     lint {
         checkDependencies false
     }
+
+    androidResources {
+        noCompress 'webp'
+    }
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation ('com.github.jwdeveloper.TikTok-Live-Java:Client:1.10.0-Release') {
+
+    implementation('com.github.jwdeveloper.TikTok-Live-Java:Client:1.10.0-Release') {
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
     }
@@ -33,10 +40,4 @@ dependencies {
 configurations.all {
     exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
     exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
-}
-
-android {
-    androidResources {
-        noCompress 'webp'
-    }
 }
