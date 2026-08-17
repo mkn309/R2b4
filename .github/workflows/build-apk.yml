@@ -13,6 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Enable AndroidX
+        run: |
+          printf 'android.useAndroidX=true\nandroid.enableJetifier=true\n' > gradle.properties
+
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
