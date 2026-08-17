@@ -12,6 +12,11 @@ android {
         versionName '0.1.0'
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
     lint {
         checkDependencies false
     }
@@ -28,4 +33,10 @@ dependencies {
 configurations.all {
     exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
     exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+}
+
+android {
+    androidResources {
+        noCompress 'webp'
+    }
 }
